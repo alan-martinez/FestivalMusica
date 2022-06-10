@@ -1,0 +1,20 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Proyecto con Gulp, SASS y HTML",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/SCSS:build/css",
+    "tarea": "gulp tarea"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Alan Martinez",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "sass": "^1.52.3"
+  }
+}
