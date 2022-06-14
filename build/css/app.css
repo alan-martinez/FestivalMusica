@@ -481,3 +481,15 @@ img {
   color: #F53756;
   font-weight: 700;
 }
+
+.lineup {
+  background-color: #F53756;
+  padding: 5rem 0;
+}
+.lineup h3, .lineup p {
+  text-align: center;
+  color: #FFF;
+}
+.lineup .dia {
+  text-transform: uppercase;
+}
