@@ -37,6 +37,11 @@ function mostrarImagen(id){
     const overlay = document.createElement('DIV');
     overlay.appendChild(imagen);
     overlay.classList.add('overlay');
+    overlay.onclick = function(){
+        const body = document.querySelector('body');
+        body.classList.remove('fijar-body');
+        overlay.remove();
+    }
 
     //Crea el boton de cerrar
     const cerrarModal = document.createElement('P');

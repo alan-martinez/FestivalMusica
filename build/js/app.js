@@ -18,13 +18,44 @@ function crearGaleria(){
         `;
 
         imagen.onclick = function(){
-            mostrarImagen();
+            mostrarImagen(i);
         }
 
         galeria.appendChild(imagen);
     }
 }
 
-function mostrarImagen(){
-    console.log('Mostrando....')
+function mostrarImagen(id){
+    const imagen = document.createElement('picture')
+    imagen.innerHTML = `
+        <source srcset="build/img/grande/${id}.avif" type="image/avif">
+        <source srcset="build/img/grande/${id}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300"srcset="build/img/grande/${id}.jpg" alt="Imagen vocalista">
+    `;
+
+    //Crea el overlay con la imagen
+    const overlay = document.createElement('DIV');
+    overlay.appendChild(imagen);
+    overlay.classList.add('overlay');
+    overlay.onclick = function(){
+        const body = document.querySelector('body');
+        body.classList.remove('fijar-body');
+        overlay.remove();
+    }
+
+    //Crea el boton de cerrar
+    const cerrarModal = document.createElement('P');
+    cerrarModal.innerHTML = 'X';
+    cerrarModal.classList.add('btn-cerrar');
+    cerrarModal.onclick = function(){
+        const body = document.querySelector('body');
+        body.classList.remove('fijar-body');
+        overlay.remove();
+    }
+    overlay.appendChild(cerrarModal);
+
+    //Añadir al HTML
+    const body = document.querySelector('body');
+    body.appendChild(overlay);
+    body.classList.add('fijar-body');
 }
